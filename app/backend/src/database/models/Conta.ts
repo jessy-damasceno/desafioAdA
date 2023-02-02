@@ -1,9 +1,11 @@
 import { INTEGER, STRING, DATEONLY, Model } from 'sequelize';
 import db from '.';
+import Propriedade from './Propriedade';
 
 class Conta extends Model {
   id: number;
   type: 'a pagar' | 'a receber';
+  property: number;
   price: string;
   dueDate: Date;
   commission: string;
@@ -18,6 +20,10 @@ Conta.init({
   },
   type: {
     type: STRING,
+    allowNull: false,
+  },
+  property: {
+    type: INTEGER,
     allowNull: false,
   },
   price: {
@@ -38,5 +44,9 @@ Conta.init({
   underscored: true,
   timestamps: false,
 });
+
+Conta.belongsTo(Propriedade, { foreignKey: 'property', as: 'property' });
+
+Propriedade.hasMany(Conta, { foreignKey: 'property', as: 'property' });
 
 export default Conta;
