@@ -82,8 +82,8 @@ Reserva.init({
   timestamps: false,
 });
 
-Reserva.belongsTo(Propriedade, { foreignKey: 'property', as: 'property' });
+Reserva.belongsTo(Propriedade, { foreignKey: 'property', as: 'propertyName' });
 
-Propriedade.hasMany(Reserva, { foreignKey: 'property', as: 'property' });
+Propriedade.hasMany(Reserva, { foreignKey: 'property', as: 'propertyName' });
 
 export default Reserva;

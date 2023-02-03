@@ -46,10 +46,10 @@ Conta.init({
   timestamps: false,
 });
 
-Conta.belongsTo(Propriedade, { foreignKey: 'property', as: 'property' });
-Conta.belongsTo(Reserva, { foreignKey: 'reserve', as: 'reserve' });
+Conta.belongsTo(Propriedade, { foreignKey: 'id', as: 'propertyOf' });
+Conta.belongsTo(Reserva, { foreignKey: 'id', as: 'reserveOf' });
 
-Propriedade.hasMany(Conta, { foreignKey: 'property', as: 'property' });
-Reserva.hasMany(Conta, { foreignKey: 'reserve', as: 'reserve' });
+Propriedade.hasMany(Conta, { foreignKey: 'property', as: 'propertyOf' });
+Reserva.hasMany(Conta, { foreignKey: 'reserva', as: 'reserveOf' });
 
 export default Conta;
