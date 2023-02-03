@@ -41,15 +41,15 @@ Conta.init({
   },
 }, {
   sequelize: db,
-  modelName: 'reservas',
-  underscored: true,
+  modelName: 'contas',
+  underscored: false,
   timestamps: false,
 });
 
-Conta.belongsTo(Propriedade, { foreignKey: 'id', as: 'propertyOf' });
-Conta.belongsTo(Reserva, { foreignKey: 'id', as: 'reserveOf' });
+Conta.belongsTo(Propriedade, { foreignKey: 'property', as: 'propertyOf' });
+Conta.belongsTo(Reserva, { foreignKey: 'reserve', as: 'reserveOf' });
 
 Propriedade.hasMany(Conta, { foreignKey: 'property', as: 'propertyOf' });
-Reserva.hasMany(Conta, { foreignKey: 'reserva', as: 'reserveOf' });
+Reserva.hasMany(Conta, { foreignKey: 'reserve', as: 'reserveOf' });
 
 export default Conta;

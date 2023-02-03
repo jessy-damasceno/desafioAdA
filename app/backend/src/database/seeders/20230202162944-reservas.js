@@ -16,6 +16,7 @@ const seeder = json.map((reserva) => {
     rentPrice: reserva.rentPrice,
     rentTax: parseInt(reserva.rentTax),
     property: parseInt(reserva.property),
+    locality: reserva.locality,
     extrasPrice: parseInt(reserva.extras),
     extrasTax: parseInt(reserva.extrasTax),
     total: reserva.total,

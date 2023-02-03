@@ -15,7 +15,7 @@ Propriedade.init({
 }, {
   sequelize: db,
   modelName: 'propriedades',
-  underscored: true,
+  underscored: false,
   timestamps: false,
 });
 

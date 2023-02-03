@@ -78,7 +78,7 @@ Reserva.init({
 }, {
   sequelize: db,
   modelName: 'reservas',
-  underscored: true,
+  underscored: false,
   timestamps: false,
 });
 

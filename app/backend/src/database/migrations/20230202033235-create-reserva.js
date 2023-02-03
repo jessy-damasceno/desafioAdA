@@ -36,6 +36,10 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
+      locality: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       extrasPrice: {
         type: Sequelize.INTEGER,
         allowNull: false,

@@ -1,12 +1,12 @@
 import IBill from '../interfaces/IBill';
 import Conta from '../database/models/Conta';
-// import Reserva from '../database/models/Reserva';
+import Reserva from '../database/models/Reserva';
 import Propriedade from '../database/models/Propriedade';
 
 class BillService {
   public async findAll(): Promise<IBill[] | []> {
     return Conta.findAll({
-      include: [{ model: Propriedade, as: 'propertyOf' }],
+      include: [{ model: Propriedade, as: 'propertyOf' }, { model: Reserva, as: 'reserveOf' }],
     });
   }
 
