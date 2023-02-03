@@ -1,9 +1,8 @@
-import { INTEGER, STRING, Model } from 'sequelize';
+import { INTEGER, Model } from 'sequelize';
 import db from '.';
 
 class Propriedade extends Model {
   id: number;
-  name: string;
 }
 
 Propriedade.init({
@@ -11,11 +10,6 @@ Propriedade.init({
     type: INTEGER,
     allowNull: false,
     primaryKey: true,
-    autoIncrement: true,
-  },
-  name: {
-    type: STRING,
-    allowNull: false,
     unique: true,
   },
 }, {

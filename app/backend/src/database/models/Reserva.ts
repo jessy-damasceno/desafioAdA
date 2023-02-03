@@ -9,7 +9,8 @@ class Reserva extends Model {
   rentPrice: string;
   rentTax: number;
   property: number;
-  extras: number;
+  locality: string;
+  extrasPrice: number;
   extrasTax: number;
   total: string;
   payment: string;
@@ -43,6 +44,10 @@ Reserva.init({
   },
   property: {
     type: INTEGER,
+    allowNull: false,
+  },
+  locality: {
+    type: STRING,
     allowNull: false,
   },
   extrasPrice: {

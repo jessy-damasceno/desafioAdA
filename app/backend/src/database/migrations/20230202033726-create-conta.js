@@ -13,6 +13,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      reserve: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "reservas",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       property: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -31,14 +41,10 @@ module.exports = {
         type: Sequelize.DATEONLY,
         allowNull: false,
       },
-      commission: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
     });
   },
 
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface, _Sequelize) => {
     await queryInterface.dropTable("contas");
   },
 };

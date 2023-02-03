@@ -6,18 +6,13 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-      },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
         unique: true,
       },
     });
   },
 
   down: async (queryInterface, _Sequelize) => {
-    await queryInterface.dropTable("users");
+    await queryInterface.dropTable("propriedades");
   },
 };
