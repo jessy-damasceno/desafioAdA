@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
+      date: {
+        type: Sequelize.DATEONLY,
+        allowNull: false,
+      },
       checkIn: {
         type: Sequelize.DATEONLY,
         allowNull: false,

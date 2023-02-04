@@ -18,7 +18,7 @@ class ReserveController {
 
     const reserves = await reserveService.findAll();
 
-    return res.sendStatus(StatusCodes.OK).json(reserves);
+    return res.status(StatusCodes.OK).json(reserves);
   }
 }
 

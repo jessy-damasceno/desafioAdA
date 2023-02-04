@@ -11,6 +11,7 @@ const data = fs.readFileSync(path.resolve(__dirname, '../../backups/reservas.js'
 const json = JSON.parse(data);
 const seeder = json.map((reserva) => {
   const obj = {
+    date: getDateFromString(reserva.date),
     checkIn: getDateFromString(reserva.checkIn),
     checkOut: getDateFromString(reserva.checkOut),
     rentPrice: reserva.rentPrice,

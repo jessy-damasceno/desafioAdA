@@ -4,6 +4,7 @@ import Propriedade from './Propriedade';
 
 class Reserva extends Model {
   id: number;
+  date: Date;
   checkIn: Date;
   checkOut: Date;
   rentPrice: string;
@@ -24,6 +25,10 @@ Reserva.init({
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
+  },
+  date: {
+    type: DATEONLY,
+    allowNull: false,
   },
   checkIn: {
     type: DATEONLY,

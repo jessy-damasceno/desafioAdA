@@ -31,6 +31,7 @@ class ReserveService {
 
   public reserveFactory(reserva: csvSeeder): IReserve {
     const result = {
+      date: getDateFromString(reserva.date),
       checkIn: getDateFromString(reserva.checkIn),
       checkOut: getDateFromString(reserva.checkOut),
       rentPrice: reserva.rentPrice,

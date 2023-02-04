@@ -1,5 +1,6 @@
 export default interface IReserve {
   id?: number;
+  date: Date;
   checkIn: Date;
   checkOut: Date;
   rentPrice: string;
