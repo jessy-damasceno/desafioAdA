@@ -12,6 +12,14 @@ class ReserveController {
 
     return res.status(StatusCodes.CREATED).json({ message: 'Created' });
   }
+
+  public async findAll(req: Request, res: Response) {
+    const reserveService = new ReserveService();
+
+    const reserves = await reserveService.findAll();
+
+    return res.sendStatus(StatusCodes.OK).json(reserves);
+  }
 }
 
 export default new ReserveController();
