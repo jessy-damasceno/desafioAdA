@@ -52,9 +52,9 @@ Existem rotas para buscar todas as contas, contas a pagar e contas a receber (qu
   *`docker exec –it <container name> /bin/bash`
   
   7. Executar o comando para dar seed no banco de dados:
-  *`npm run db:reset`
+  *`npm run build` e depois `npm run db:reset`
 
-  8. O container do back-end já está configurado para inicializar a API quando startado. Caso isto não aconteça, pode executar `npm run dev` ou `npm start` (a única diferença é que o npm run dev fica escutando alterações nos arquivos back-end).
+  8. O container do back-end já está configurado para inicializar a API quando startado. Caso isto não aconteça, pode executar `npm run dev` ou `npm`start` (a única diferença é que o npm run dev fica escutando alterações nos arquivos back-end).
   
   9. O container do front-end, assim como do back-end, já está configurado para inicializar a aplicação quando for startado. Caso aconteça algum erro e ele não for inicializado, startar o container manualmente (`docker exec –it <container name> /bin/bash`) e rodar o script `npm start` *dentro do container*.
   
