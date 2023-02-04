@@ -3,7 +3,7 @@ import csvSeeder from '../interfaces/@csvSeeder';
 import IReserve from '../interfaces/IReserve';
 import Propriedade from '../database/models/Propriedade';
 import Reserva from '../database/models/Reserva';
-import billService from './bill.service';
+import BillService from './bill.service';
 // eslint-disable-next-line import/no-cycle
 // import billService from './bill.service';
 
@@ -15,6 +15,7 @@ class ReserveService {
   }
 
   public async create(reserves: csvSeeder[]) {
+    const billService = new BillService();
     const properties = [...new Set(reserves
       .map(({ property }) => JSON.stringify({ id: property })))].map((a) => JSON.parse(a));
 

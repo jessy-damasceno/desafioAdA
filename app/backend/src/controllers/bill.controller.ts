@@ -3,17 +3,18 @@ import { Request, Response } from 'express';
 import BillService from '../services/bill.service';
 
 class BillController {
-  constructor(private billService = BillService) { }
-
   public async getAll(_req: Request, res: Response) {
-    const billsList = await this.billService.findAll();
+    const billService = new BillService();
+    const billsList = await billService.findAll();
 
     return res.status(StatusCodes.OK).json(billsList);
   }
 
   public async getBillsByType(req: Request, res: Response) {
+    const billService = new BillService();
     const { type } = req.body;
-    const bills = await this.billService.findBillsByType(type as ('A pagar' | 'A receber'));
+
+    const bills = await billService.findBillsByType(type as ('A pagar' | 'A receber'));
 
     return res.status(StatusCodes.OK).json(bills);
   }
