@@ -1,4 +1,4 @@
-export default interface IBill {
+export default interface IConta {
   id?: number;
   type: 'A pagar' | 'A receber';
   reserve: number;

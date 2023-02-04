@@ -1,5 +1,6 @@
 import * as express from 'express';
 import billRouter from './routes/billRoute';
+import reserveRouter from './routes/reserveRoute';
 
 class App {
   public app: express.Express;
@@ -25,6 +26,7 @@ class App {
     this.app.use(accessControl);
 
     this.app.use('/contas', billRouter);
+    this.app.use('/reservas', reserveRouter);
   }
 
   public start(PORT: string | number): void {

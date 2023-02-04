@@ -56,7 +56,7 @@ const toReceiveFactory = (obj, index) => {
     toReceive.price = JSON.stringify(
       parseFloat(obj.totalWithoutTax) - parseFloat(obj.personalizedCommission));
 
-    toReceive.dueDate = addDaysTo(obj.checkOut);
+    toReceive.dueDate = addDaysTo(obj.checkIn, 5);
   }
 
   return toReceive;
